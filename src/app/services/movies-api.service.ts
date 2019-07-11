@@ -11,11 +11,11 @@ export class MoviesApiService {
 
   constructor(private http: HttpClient) {}
 
-  getCategory(cat: string) {
+  getCategory(cat: string, page: number = 1) {
     const validCategories = ['top_rated', 'upcoming', 'popular'];
     if (validCategories.includes(cat)) {
       return this.http
-        .get(`${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}`)
+        .get(`${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}&page=${page}`)
         .toPromise();
     } else {
       return Promise.reject('no valid category');

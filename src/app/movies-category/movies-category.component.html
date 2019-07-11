@@ -1,6 +1,11 @@
 <div class="movies-category">
-  <h1 >
-     {{category}} movies
-  </h1>
-  <app-movies-display  [data]="movies"></app-movies-display>
+  <h1>{{ category }} movies</h1>
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="200"
+    (scrolled)="nextPage()"
+  >
+    <app-movies-display [data]="movies"></app-movies-display>
+  </div>
 </div>
