@@ -11,9 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 import { MoviesApiService } from './services/movies-api.service';
+import { MoviesDisplayComponent } from './movies-display/movies-display.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, MoviesCategoryComponent],
+  declarations: [AppComponent, NavigationComponent, MoviesCategoryComponent, MoviesDisplayComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [MoviesApiService],
   bootstrap: [AppComponent],
