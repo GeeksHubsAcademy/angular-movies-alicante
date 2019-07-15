@@ -12,10 +12,12 @@ export class MoviesCategoryComponent implements OnInit {
   movies: object[] = [];
   constructor(private route: ActivatedRoute, private api: MoviesApiService, private router: Router) {}
   page = 1;
+
   ngOnInit() {
+
     this.route.params.subscribe(params => {
       this.category = params.category.replace('_', ' ');
-
+      this.page = 1;
       this.api
         .getCategory(params.category)
         .then((data: any) => {

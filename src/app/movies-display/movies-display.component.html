@@ -3,10 +3,10 @@
     class="movie"
     *ngFor="let movie of data"
     routerLink="/movie/{{ movie.id }}"
-    [ngStyle]="{
+    [ngStyle]="  movie.backdrop_path ?  {
       'background-image':
         'url(http://image.tmdb.org/t/p/w185' + movie.backdrop_path + ')'
-    }"
+    } : {}"
   >
     <h2>{{ movie.title }}</h2>
   </a>

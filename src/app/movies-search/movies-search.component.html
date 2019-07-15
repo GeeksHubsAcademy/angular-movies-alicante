@@ -1,0 +1,5 @@
+
+<div class="search">
+  <input  getfocus type="text" placeholder="search" [(ngModel)]="query"  (keyup)="search()">
+</div>
+<app-movies-display [data]="movies"></app-movies-display>

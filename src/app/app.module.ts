@@ -11,6 +11,8 @@ import { MoviesApiService } from './services/movies-api.service';
 import { MoviesDisplayComponent } from './movies-display/movies-display.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MoviesSearchComponent } from './movies-search/movies-search.component';
+import { AutofocusDirective } from './autofocus.directive';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NavigationComponent,
     MoviesCategoryComponent,
     MoviesDisplayComponent,
+    MoviesSearchComponent,
+    AutofocusDirective,
   ],
   imports: [
     BrowserModule,

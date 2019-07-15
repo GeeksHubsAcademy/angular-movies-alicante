@@ -21,4 +21,8 @@ export class MoviesApiService {
       return Promise.reject('no valid category');
     }
   }
+  searchMovies(query:string) {
+   let url = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}&language=es-ES`;
+   return this.http.get(url).toPromise();
+ }
 }
