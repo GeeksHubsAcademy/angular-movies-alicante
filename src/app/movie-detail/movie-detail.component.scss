@@ -1,0 +1,22 @@
+.movie-detail {
+  color:white;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2em;
+  > * {
+    flex: 2.5;
+    min-width: 300px;
+  }
+  .poster {
+    flex: 1;
+    img {
+      width: 100%;
+    }
+  }
+  a {
+    color:whitesmoke;
+  }
+  .data {
+    padding-right: 1em;
+  }
+}

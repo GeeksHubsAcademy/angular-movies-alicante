@@ -15,14 +15,25 @@ export class MoviesApiService {
     const validCategories = ['top_rated', 'upcoming', 'popular'];
     if (validCategories.includes(cat)) {
       return this.http
-        .get(`${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}&page=${page}`)
+        .get(
+          `${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}&page=${page}`,
+        )
         .toPromise();
     } else {
       return Promise.reject('no valid category');
     }
   }
-  searchMovies(query:string) {
-   let url = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}&language=es-ES`;
-   return this.http.get(url).toPromise();
- }
+  searchMovies(query: string) {
+    let url = `${this.baseUrlApi}/search/movie?api_key=${
+      this.apikey
+    }&query=${query}&language=es-ES`;
+    return this.http.get(url).toPromise();
+  }
+  getMovieById(id: string, page: number = 1) {
+      return this.http
+        .get(
+          `${this.baseUrlApi}/movie/${id}?api_key=${this.apikey}&page=${page}`,
+        )
+        .toPromise();
+  }
 }

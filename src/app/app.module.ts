@@ -13,6 +13,8 @@ import { MoviesDisplayComponent } from './movies-display/movies-display.componen
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MoviesSearchComponent } from './movies-search/movies-search.component';
 import { AutofocusDirective } from './autofocus.directive';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { FormatDatePipe } from './format-date.pipe';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { AutofocusDirective } from './autofocus.directive';
     MoviesDisplayComponent,
     MoviesSearchComponent,
     AutofocusDirective,
+    MovieDetailComponent,
+    FormatDatePipe,
   ],
   imports: [
     BrowserModule,

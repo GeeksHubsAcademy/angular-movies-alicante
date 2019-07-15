@@ -1,0 +1,28 @@
+<div class="movie-detail"  *ngIf="movie">
+
+  <div class="data">
+    <h1>{{movie.title}}  ({{movie.release_date | formatDate}})</h1>
+    <h3>{{movie.vote_average}}</h3>
+    <h3>Homepage: <a href="{{movie.homepage}}" target="_blank" rel="noopener noreferrer">{{movie.homepage}}</a></h3>
+    <p>
+      {{movie.overview}}
+    </p>
+
+
+
+  </div>
+
+  <div class="poster">
+    <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" />
+  </div>
+
+</div>
+
+<div class="notFound"  *ngIf="!movie && !loading">
+  <h1>movie not found</h1>
+</div>
+
+
+<div class="loading"  *ngIf="loading">
+  <h1>loading</h1>
+</div>
