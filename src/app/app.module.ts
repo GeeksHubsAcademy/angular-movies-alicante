@@ -16,6 +16,7 @@ import { AutofocusDirective } from './autofocus.directive';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FormatDatePipe } from './format-date.pipe';
 import { NgxStarsModule } from 'ngx-stars';
+import { MoviesGenreComponent } from './movies-genre/movies-genre.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgxStarsModule } from 'ngx-stars';
     AutofocusDirective,
     MovieDetailComponent,
     FormatDatePipe,
+    MoviesGenreComponent,
   ],
   imports: [
     BrowserModule,

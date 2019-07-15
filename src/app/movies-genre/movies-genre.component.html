@@ -1,0 +1,11 @@
+<div class="movies-genre">
+  <h1>Genre {{genre}}</h1>
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="200"
+    (scrolled)="nextPage()"
+  >
+    <app-movies-display [data]="movies"></app-movies-display>
+  </div>
+</div>

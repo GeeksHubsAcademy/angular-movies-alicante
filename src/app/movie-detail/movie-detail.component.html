@@ -3,13 +3,14 @@
   <div class="data">
     <h1>{{movie.title}}  ({{movie.release_date | formatDate}})</h1>
     <h3>{{movie.vote_average}} <ngx-stars  *ngIf="!loading"    [readonly]="true" [maxStars]="10" [initialStars]="movie.vote_average" color="white"></ngx-stars></h3>
+    <div class="genres">
+      <a  *ngFor="let genre of movie.genres" routerLink="/genre/{{genre.id}}/{{genre.name}}"  > {{genre.name}}  </a>
+    </div>
 
     <h3 *ngIf="movie.homepage">Homepage: <a href="{{movie.homepage}}" target="_blank" rel="noopener noreferrer">{{movie.homepage}}</a></h3>
     <p>
       {{movie.overview}}
     </p>
-
-
 
   </div>
 

@@ -36,7 +36,20 @@ export class MoviesApiService {
   }
   getRelatedMoviesById(id: string, page: number = 1) {
     return this.http
-      .get(`${this.baseUrlApi}/movie/${id}/similar?api_key=${this.apikey}&page=${page}`)
+      .get(
+        `${this.baseUrlApi}/movie/${id}/similar?api_key=${
+          this.apikey
+        }&page=${page}`,
+      )
+      .toPromise();
+  }
+  getGenreById(id: string, page: number = 1) {
+    return this.http
+      .get(
+        `${this.baseUrlApi}/discover/movie?api_key=${
+          this.apikey
+        }&with_genres=${id}&page=${page}`,
+      )
       .toPromise();
   }
 }
