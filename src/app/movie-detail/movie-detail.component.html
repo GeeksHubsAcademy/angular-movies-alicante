@@ -2,8 +2,9 @@
 
   <div class="data">
     <h1>{{movie.title}}  ({{movie.release_date | formatDate}})</h1>
-    <h3>{{movie.vote_average}}</h3>
-    <h3>Homepage: <a href="{{movie.homepage}}" target="_blank" rel="noopener noreferrer">{{movie.homepage}}</a></h3>
+    <h3>{{movie.vote_average}} <ngx-stars  *ngIf="!loading"    [readonly]="true" [maxStars]="10" [initialStars]="movie.vote_average" color="white"></ngx-stars></h3>
+
+    <h3 *ngIf="movie.homepage">Homepage: <a href="{{movie.homepage}}" target="_blank" rel="noopener noreferrer">{{movie.homepage}}</a></h3>
     <p>
       {{movie.overview}}
     </p>
@@ -16,6 +17,11 @@
     <img src="http://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="" />
   </div>
 
+</div>
+
+<div class="related" *ngIf="relatedMovies.length > 0">
+  <h2>Related:</h2>
+  <app-movies-display [data]="relatedMovies"></app-movies-display>
 </div>
 
 <div class="notFound"  *ngIf="!movie && !loading">

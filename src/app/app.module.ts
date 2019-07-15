@@ -15,7 +15,7 @@ import { MoviesSearchComponent } from './movies-search/movies-search.component';
 import { AutofocusDirective } from './autofocus.directive';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FormatDatePipe } from './format-date.pipe';
-
+import { NgxStarsModule } from 'ngx-stars';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { FormatDatePipe } from './format-date.pipe';
     HttpClientModule,
     FormsModule,
     InfiniteScrollModule,
+    NgxStarsModule,
   ],
   providers: [MoviesApiService],
   bootstrap: [AppComponent],

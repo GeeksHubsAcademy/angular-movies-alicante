@@ -29,11 +29,14 @@ export class MoviesApiService {
     }&query=${query}&language=es-ES`;
     return this.http.get(url).toPromise();
   }
-  getMovieById(id: string, page: number = 1) {
-      return this.http
-        .get(
-          `${this.baseUrlApi}/movie/${id}?api_key=${this.apikey}&page=${page}`,
-        )
-        .toPromise();
+  getMovieById(id: string) {
+    return this.http
+      .get(`${this.baseUrlApi}/movie/${id}?api_key=${this.apikey}`)
+      .toPromise();
+  }
+  getRelatedMoviesById(id: string, page: number = 1) {
+    return this.http
+      .get(`${this.baseUrlApi}/movie/${id}/similar?api_key=${this.apikey}&page=${page}`)
+      .toPromise();
   }
 }
